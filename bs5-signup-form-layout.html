@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Tài Khoản - Bootstrap</title>
+    
+    <!-- Nhúng Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Nhúng Font Awesome để thêm icon cho Form -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Tùy chỉnh CSS một chút để form có bóng đổ và căn giữa màn hình -->
+    <style>
+        body {
+            background-color: #f0f2f5; /* Nền xám nhạt nhẹ nhàng */
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .register-container {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 1000px; /* Giới hạn độ rộng của khung đăng ký */
+        }
+        
+        /* Đảm bảo ảnh của Carousel lấp đầy chiều cao cột trái */
+        .carousel-item img {
+            height: 100%;
+            min-height: 550px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container my-5">
+        <!-- Khung chứa Form và Carousel -->
+        <div class="row register-container mx-auto">
+            
+            <!-- CỘT TRÁI: CAROUSEL (Chỉ hiện trên màn hình máy tính d-none d-lg-block) -->
+            <div class="col-lg-6 p-0 d-none d-lg-block">
+                <div id="benefitsCarousel" class="carousel slide h-100" data-bs-ride="carousel">
+                    <!-- Các chấm điều hướng -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#benefitsCarousel" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#benefitsCarousel" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#benefitsCarousel" data-bs-slide-to="2"></button>
+                    </div>
+                    
+                    <!-- Hình ảnh và nội dung Carousel -->
+                    <div class="carousel-inner h-100">
+                        <div class="carousel-item active h-100">
+                            <!-- Lấy ảnh mẫu ngẫu nhiên có kích thước dọc -->
+                            <img src="https://picsum.photos/600/800?random=1" class="d-block w-100" alt="Lợi ích 1">
+                            <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3 mb-4">
+                                <h5 class="fw-bold">Giao Diện Thân Thiện</h5>
+                                <p>Sử dụng dễ dàng trên mọi thiết bị và nền tảng.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item h-100">
+                            <img src="https://picsum.photos/600/800?random=2" class="d-block w-100" alt="Lợi ích 2">
+                            <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3 mb-4">
+                                <h5 class="fw-bold">Bảo Mật Tuyệt Đối</h5>
+                                <p>Dữ liệu cá nhân của bạn luôn được mã hóa an toàn.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item h-100">
+                            <img src="https://picsum.photos/600/800?random=3" class="d-block w-100" alt="Lợi ích 3">
+                            <div class="carousel-caption bg-dark bg-opacity-50 rounded p-3 mb-4">
+                                <h5 class="fw-bold">Hỗ Trợ 24/7</h5>
+                                <p>Đội ngũ chuyên viên luôn sẵn sàng giải đáp thắc mắc.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CỘT PHẢI: FORM ĐĂNG KÝ -->
+            <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-center">
+                <!-- Tiêu đề -->
+                <div class="text-center mb-4">
+                    <h3 class="text-primary fw-bold">Tạo Tài Khoản Mới</h3>
+                    <p class="text-muted">Đăng ký để trải nghiệm dịch vụ của chúng tôi</p>
+                </div>
+
+                <!-- Bắt đầu Form -->
+                <form>
+                    <!-- Trường Họ và Tên (Dùng input-group để nối icon) -->
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label fw-semibold">Họ và tên</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="fas fa-user text-muted"></i></span>
+                            <input type="text" class="form-control border-start-0" id="fullName" placeholder="Nhập họ và tên">
+                        </div>
+                    </div>
+
+                    <!-- Trường Email -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label fw-semibold">Địa chỉ Email</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="fas fa-envelope text-muted"></i></span>
+                            <input type="email" class="form-control border-start-0" id="email" placeholder="name@example.com">
+                        </div>
+                    </div>
+
+                    <!-- Trường Mật khẩu -->
+                    <div class="mb-3">
+                        <label for="password" class="form-label fw-semibold">Mật khẩu</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="fas fa-lock text-muted"></i></span>
+                            <input type="password" class="form-control border-start-0" id="password" placeholder="Tạo mật khẩu">
+                        </div>
+                    </div>
+
+                    <!-- Trường Xác nhận mật khẩu -->
+                    <div class="mb-4">
+                        <label for="confirmPassword" class="form-label fw-semibold">Xác nhận mật khẩu</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="fas fa-check-circle text-muted"></i></span>
+                            <input type="password" class="form-control border-start-0" id="confirmPassword" placeholder="Nhập lại mật khẩu">
+                        </div>
+                    </div>
+
+                    <!-- Nút Đăng Ký (d-grid giúp nút trải dài 100% width) -->
+                    <div class="d-grid mb-3">
+                        <button type="submit" class="btn btn-primary btn-lg fw-bold">Đăng Ký Ngay</button>
+                    </div>
+
+                    <!-- Dòng chuyển hướng Đăng nhập -->
+                    <div class="text-center">
+                        <p class="mb-0 text-muted">Đã có tài khoản? <a href="#" class="text-decoration-none fw-bold">Đăng nhập tại đây</a></p>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Nhúng Bootstrap 5 JS (Quan trọng để Carousel chạy) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
