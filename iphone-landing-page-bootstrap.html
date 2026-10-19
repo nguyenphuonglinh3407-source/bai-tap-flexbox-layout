@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu Sản Phẩm - iPhone Style</title>
+    
+    <!-- Nhúng Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Nhúng Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Tùy chỉnh nhẹ nhàng để giao diện giống Apple Product Page (màu nền tối/sáng tinh tế) -->
+    <style>
+        body {
+            background-color: #fbfbfd;
+            color: #1d1d1f;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        .product-hero {
+            background-color: #000;
+            color: #fff;
+            overflow: hidden;
+        }
+        .spec-card {
+            background-color: #f5f5f7;
+            border: none;
+            border-radius: 18px;
+            transition: transform 0.3s ease;
+        }
+        .spec-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. NAVBAR TỐI GIẢN (Apple Style) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3 sticky-top">
+        <div class="container justify-content-between">
+            <a class="navbar-brand fw-bold fs-4" href="#"><i class="fab fa-apple"></i> iPhone 16 Pro</a>
+            <button class="btn btn-light btn-sm rounded-pill px-3 fw-semibold">Mua ngay</button>
+        </div>
+    </nav>
+
+    <!-- 2. HERO SECTION: GIỚI THIỆU SẢN PHẨM CHÍNH -->
+    <header class="product-hero text-center py-5">
+        <div class="container py-4">
+            <span class="text-warning text-uppercase tracking-wider fw-semibold small">Mới ra mắt</span>
+            <h1 class="display-3 fw-bold mt-2 mb-3">Titan Tự Nhiên. Siêu Phẩm Cầm Tay.</h1>
+            <p class="lead text-secondary mb-4 mx-auto" style="max-width: 600px;">
+                Thiết kế titan cấp độ hàng không vũ trụ. Chip A18 Pro mạnh mẽ chưa từng có. Hệ thống camera chuyên nghiệp đỉnh cao.
+            </p>
+            <!-- Sử dụng Flexbox để căn giữa cụm nút CTA -->
+            <div class="d-flex justify-content-center gap-3 mb-5">
+                <a href="#buy" class="btn btn-primary rounded-pill px-4 py-2">Xem giá</a>
+                <a href="#specs" class="btn btn-outline-light rounded-pill px-4 py-2">Tìm hiểu thêm</a>
+            </div>
+            
+            <!-- Hình ảnh sản phẩm lớn (Responsive với img-fluid) -->
+            <div class="container">
+                <img src="https://picsum.photos/1000/500?random=10" class="img-fluid rounded-4 shadow-lg" alt="iPhone Product">
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. SECTION THÔNG SỐ KỸ THUẬT & TÍNH NĂNG (Dùng Grid System & Flexbox) -->
+    <section id="specs" class="container py-5 my-4">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold display-5">Hiệu Năng Đỉnh Cao Trong Từng Chi Tiết</h2>
+            <p class="text-muted">Khám phá những công nghệ đột phá được tích hợp bên trong.</p>
+        </div>
+
+        <!-- Hàng Grid 3 cột trên Desktop, 1 cột trên Mobile -->
+        <div class="row g-4">
+            <!-- Tính năng 1 -->
+            <div class="col-md-4">
+                <div class="spec-card p-4 h-100 d-flex flex-column justify-content-between text-center text-md-start">
+                    <div>
+                        <div class="text-primary fs-2 mb-3"><i class="fas fa-microchip"></i></div>
+                        <h4 class="fw-bold">Chip A18 Pro</h4>
+                        <p class="text-muted">Bộ vi xử lý siêu tốc độ mang lại trải nghiệm đồ họa chơi game chân thực và tiết kiệm pin tối ưu.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tính năng 2 -->
+            <div class="col-md-4">
+                <div class="spec-card p-4 h-100 d-flex flex-column justify-content-between text-center text-md-start">
+                    <div>
+                        <div class="text-success fs-2 mb-3"><i class="fas fa-camera"></i></div>
+                        <h4 class="fw-bold">Camera 48MP</h4>
+                        <p class="text-muted">Hệ thống camera tiên tiến chụp ảnh sắc nét từng chi tiết ngay cả trong điều kiện thiếu sáng.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tính năng 3 -->
+            <div class="col-md-4">
+                <div class="spec-card p-4 h-100 d-flex flex-column justify-content-between text-center text-md-start">
+                    <div>
+                        <div class="text-danger fs-2 mb-3"><i class="fas fa-battery-full"></i></div>
+                        <h4 class="fw-bold">Thời Lượng Pin</h4>
+                        <p class="text-muted">Phát video liên tục lên đến 29 giờ, cho bạn thoải mái làm việc và giải trí suốt cả ngày dài.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SECTION BANNER KẾ HOẠCH BÁN HÀNG & NÚT GỌI HÀNH ĐỘNG (CTA) -->
+    <section id="buy" class="bg-light py-5 border-top">
+        <div class="container text-center py-4">
+            <h2 class="fw-bold mb-3">Sở Hữu Ngay Hôm Nay</h2>
+            <p class="text-muted mb-4">Trả góp 0% lãi suất cùng nhiều ưu đãi hấp dẫn khi đổi máy cũ lên đời.</p>
+            <div class="d-flex justify-content-center align-items-center gap-3">
+                <button class="btn btn-dark btn-lg rounded-pill px-5"><i class="fas fa-shopping-bag me-2"></i> Đặt mua trước</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FOOTER -->
+    <footer class="bg-dark text-white-50 text-center py-4 text-small">
+        <div class="container">
+            <p class="mb-1">Bản quyền &copy; 2026 Apple Inc. Hoặc các chi nhánh trực thuộc. Đã bảo lưu mọi quyền.</p>
+            <p class="mb-0">Trang web thực hành thiết kế sản phẩm sử dụng Bootstrap 5 & Font Awesome.</p>
+        </div>
+    </footer>
+
+    <!-- Nhúng Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
