@@ -1,0 +1,67 @@
+/* Thiết lập cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eef2f5;
+}
+
+/* Flex Container bao bọc toàn trang */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Chiếm tối thiểu toàn bộ chiều cao màn hình */
+}
+
+/* Định dạng Header và Footer */
+.header, .footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Định dạng Navigation */
+.nav {
+    background-color: #444;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Khu vực chứa Content và Sidebar */
+.main-container {
+    display: flex;
+    flex: 1; /* Tự động kéo dài lấp đầy khoảng trống giữa nav và footer */
+}
+
+/* Nội dung chính */
+.content {
+    flex: 3; /* Chiếm 3/4 chiều rộng của main-container */
+    background-color: white;
+    padding: 20px;
+}
+
+/* Cột phụ */
+.sidebar {
+    flex: 1; /* Chiếm 1/4 chiều rộng của main-container */
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-left: 2px solid #ddd;
+}
+
+/* --- RESPONSIVE CHO ĐIỆN THOẠI (MOBILE) --- */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column; /* Chuyển hướng Flexbox từ ngang sang dọc */
+    }
+    
+    .sidebar {
+        border-left: none;
+        border-top: 2px solid #ddd;
+    }
+}
